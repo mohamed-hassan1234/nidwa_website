@@ -6,6 +6,13 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('nidwa_user')) || null);
 
+    const register = async (username, password) => {
+        const response = await axios.post('https://nidwa.com/api/auth/register', { username, password });
+        setUser(response.data);
+        localStorage.setItem('nidwa_user', JSON.stringify(response.data));
+        return response.data;
+    };
+
     const login = async (username, password) => {
         const response = await axios.post('https://nidwa.com/api/auth/login', { username, password });
         setUser(response.data);
@@ -19,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, register, login, logout }}>
             {children}
         </AuthContext.Provider>
     );

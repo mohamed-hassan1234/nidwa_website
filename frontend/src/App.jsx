@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
 import AdminLogin from './pages/Admin/Login';
+import AdminRegister from './pages/Admin/Register';
 import AdminLayout from './pages/Admin/AdminLayout';
 import DashboardHome from './pages/Admin/DashboardHome';
 import AdminServices from './pages/Admin/AdminServices';
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/register" element={<AdminRegister />} />
             <Route path="/admin/dashboard" element={<AdminLayout />}>
               <Route index element={<DashboardHome />} />
               <Route path="services" element={<AdminServices />} />

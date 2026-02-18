@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { ThemeContext } from '../../context/ThemeContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Laptop, Lock, User as UserIcon, Sun, Moon, ArrowRight } from 'lucide-react';
 
 const AdminLogin = () => {
@@ -137,9 +137,9 @@ const AdminLogin = () => {
                     <div className="mt-10 text-center">
                         <p className="text-slate-500 dark:text-slate-400 font-bold text-sm">
                             Don&apos;t have an account?{' '}
-                            <a href="#" className="text-primary hover:underline">
-                                Contact System Admin.
-                            </a>
+                            <Link to="/admin/register" className="text-primary hover:underline">
+                                Register now.
+                            </Link>
                         </p>
                     </div>
                 </div>
