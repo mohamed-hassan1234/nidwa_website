@@ -14,7 +14,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
+ 
 // Middleware
 const allowedOrigins = (process.env.CORS_ORIGINS || 'https://nidwa.com,http://localhost:5173')
     .split(',')
