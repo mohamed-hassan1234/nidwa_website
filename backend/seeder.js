@@ -9,7 +9,7 @@ connectDB();
 const seedAdmin = async () => {
     try {
         await User.deleteMany();
-        const admin = await User.create({
+        const admin = await User.create({ 
             username: 'admin',
             password: 'admin_password_2026'
         });
